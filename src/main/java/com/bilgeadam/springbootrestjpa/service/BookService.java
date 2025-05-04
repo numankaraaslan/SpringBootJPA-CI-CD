@@ -1,6 +1,7 @@
 package com.bilgeadam.springbootrestjpa.service;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -51,7 +52,8 @@ public class BookService
 	@PostConstruct
 	public void setSomeData()
 	{
-		Book newBook = new Book("Book 1", "isbn 1", 2025, "author 1");
+		int number = new Random().nextInt(100000) + 10;
+		Book newBook = new Book("Book " + number, "isbn " + number, 2025, "author " + number);
 		bookRepo.save(newBook);
 	}
 }
