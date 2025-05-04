@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.bilgeadam.springbootrestjpa.model.Book;
 import com.bilgeadam.springbootrestjpa.repository.BookRepo;
 
+import jakarta.annotation.PostConstruct;
+
 @Service
 public class BookService
 {
@@ -44,5 +46,12 @@ public class BookService
 	public List<Book> findAll()
 	{
 		return bookRepo.findAll(Sort.by(Order.asc("id")));
+	}
+
+	@PostConstruct
+	public void setSomeData()
+	{
+		Book newBook = new Book("Book1", "isbn1", 2025, "author1");
+		bookRepo.save(newBook);
 	}
 }
