@@ -52,7 +52,7 @@ public class BookService
 	@PostConstruct
 	public void setSomeData()
 	{
-		int number = new Random().nextInt(100000) + 10;
+		int number = new Random().nextInt(1000000) + 10;
 		Book newBook = new Book("Book " + number, "isbn " + number, 2025, "author " + number);
 		bookRepo.save(newBook);
 	}
