@@ -51,7 +51,7 @@ public class BookService
 	@PostConstruct
 	public void setSomeData()
 	{
-		Book newBook = new Book("Book1", "isbn1", 2025, "author1");
+		Book newBook = new Book("Book 1", "isbn 1", 2025, "author 1");
 		bookRepo.save(newBook);
 	}
 }
